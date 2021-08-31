@@ -440,16 +440,12 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .company > img {
@@ -465,10 +461,9 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-align: center;
   font-size: 1rem;
   font-weight: 500;
-  margin-top: 0.75rem;
+  margin-left: 0.75rem;
 }
 
 .company > p > span {
