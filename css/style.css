@@ -293,11 +293,21 @@ li {
   line-height: 1.6;
 }
 
-.about-us__img > img {
-  width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+.about-us {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.about-us__heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.about-us__description {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #3d3d3d;
+  margin-top: 0.75rem;
 }
 
 .carousel {
@@ -559,6 +569,13 @@ li {
   .nav__item a:hover {
     background-color: unset;
     color: #3579de;
+  }
+  .about-us__content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-column-gap: 3rem;
   }
   .carousel {
     height: 36rem;

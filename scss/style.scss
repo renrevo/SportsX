@@ -277,15 +277,19 @@ li {
 }
 
 .about-us {
+    padding-top: $padding * 3;
+    padding-bottom: $padding * 3;
 
-    &__img {
+    &__heading {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
 
-        >img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
+    &__description {
+        font-size: 1rem;
+        font-weight: 500;
+        color: lighten($black-color, 12);
+        margin-top: $margin * 0.75;
     }
 
 }
@@ -563,6 +567,16 @@ li {
 
             }
 
+        }
+
+    }
+
+    .about-us {
+
+        &__content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: $margin * 3;
         }
 
     }
