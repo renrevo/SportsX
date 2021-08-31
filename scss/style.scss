@@ -1,0 +1,597 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+$padding: 1rem;
+$margin: 1rem;
+
+$white-color: #ffffff;
+$black-color: hsl(0, 0%, 12%);
+$primary-color: hsl(216, 72%, 54%);
+$nav-bg-color: $primary-color;
+$hover-color: hsla(0, 0%, 0%, 0.08);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+button {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.body {
+    position: relative;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $white-color;
+    box-shadow: 0px 2px 8px 4px rgba(0, 0, 0, 0.04);
+    z-index: 1000;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: $padding * 0.75;
+        padding-bottom: $padding * 0.75;
+    }
+
+}
+
+.content-container {
+    padding-left: $padding;
+    padding-right: $padding;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+.btn {
+
+    &__menu {
+        color: $black-color;
+    }
+
+    &__menu,
+    &__nav-close {
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+
+        i {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        &:hover {
+            background-color: $hover-color;
+        }
+
+    }
+
+    &__nav-close {
+        color: $white-color;
+    }
+
+    &__contact {
+        padding: $padding * 0.75 $padding * 1.5;
+        color: $white-color;
+        font-size: 1rem;
+        font-weight: 500;
+        background-color: $primary-color;
+        border: 0.125rem solid $white-color;
+        margin-top: $margin * 1.5;
+        transition: background-color 120ms ease-in-out;
+
+        &:hover {
+            background-color: darken($primary-color, 6);
+        }
+
+    }
+
+    &__indicator {
+        cursor: pointer;
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+        margin-left: $margin * 0.5;
+        margin-right: $margin * 0.5;
+        background-color: rgba($black-color, 0.48);
+        border: 0.125rem solid rgba($white-color, .48);
+
+        &:hover {
+            background-color: rgba($black-color, 0.72);
+            border: 0.125rem solid rgba($white-color, .72);
+        }
+
+    }
+
+    &__carousel {
+        cursor: pointer;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: rgba($black-color, 0.48);
+        border: 0.125rem solid rgba($white-color, .48);
+
+        &:hover {
+            background-color: rgba($black-color, 0.72);
+            border: 0.125rem solid rgba($white-color, .72);
+        }
+
+        i {
+            font-size: 1.5rem;
+            color: $white-color;
+        }
+
+        &--right {
+            margin-left: auto;
+        }
+
+    }
+
+}
+
+.nav {
+
+    &__list {
+        position: absolute;
+        top: 0;
+        right: -14rem;
+        padding-top: $padding * 0.75;
+        padding-bottom: $padding * 0.75;
+        background-color: $nav-bg-color;
+        transition: all 300ms ease-in-out;
+
+        &--active {
+            right: 0;
+        }
+
+    }
+
+    &__close {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-left: $padding;
+        padding-right: $padding;
+    }
+
+    &__links {
+        width: 14rem;
+        height: 100vh;
+        padding-top: $padding * 0.5;
+        padding-bottom: $padding * 0.5;
+    }
+
+    &__item {
+
+        a {
+            display: flex;
+            align-items: center;
+            height: 4rem;
+            padding: $padding * 0.5 $padding * 1.5;
+            text-transform: uppercase;
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: $white-color;
+            transition: color 120ms ease-in-out;
+
+            &:hover {
+                text-decoration: none;
+                background-color: $hover-color;
+            }
+
+        }
+
+    }
+
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsla(0, 0%, 0%, 0.24);
+}
+
+.current-indicator {
+    background-color: $black-color;
+    border: 0.125rem solid $white-color;
+}
+
+.hide {
+    display: none;
+}
+
+.hero {
+    background-image: url(../assets/img/ssandc-hero.jpg);
+    background-size: cover;
+    background-position: 50% 0;
+    height: 84vh;
+    margin-top: $margin * 4;
+    display: grid;
+    place-items: center;
+
+    &__content {
+        padding: $padding;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: hsla(0, 0%, 0%, 0.24);
+    }
+
+    &__text {
+        font-size: 2.25rem;
+        font-weight: 700;
+        color: $white-color;
+    }
+
+    &__description {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: $white-color;
+        line-height: 1.6;
+    }
+
+}
+
+.about-us {
+
+    &__img {
+
+        >img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+    }
+
+}
+
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 24rem;
+
+    &__slides {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        transition: transform 1200ms ease-in-out;
+    }
+
+    &__slide {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+    &__button-group {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        display: flex;
+        padding-left: $padding;
+        padding-right: $padding;
+    }
+
+    &__nav {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        bottom: 0;
+        margin-bottom: $margin;
+    }
+
+    &-button {
+        cursor: pointer;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background-color: rgba($black-color, 0.48);
+        border: 0.125rem solid rgba($white-color, .48);
+
+        &:hover {
+            background-color: rgba($black-color, 0.72);
+            border: 0.125rem solid rgba($white-color, .72);
+        }
+
+        i {
+            font-size: 1.25rem;
+            color: $white-color;
+        }
+
+        &--right {
+            margin-left: auto;
+        }
+
+    }
+
+}
+
+.hidden {
+    display: none;
+}
+
+.footer {
+    color: $white-color;
+    background-color: darken($primary-color, 24);
+
+    &__wrapper {
+        display: grid;
+        grid-row-gap: 3rem;
+        padding-top: $padding * 3;
+        padding-bottom: $padding * 3;
+    }
+
+    &__section-heading {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: $margin * 1.5;
+    }
+
+    &__bottom {
+        padding-top: $padding;
+        padding-bottom: $padding;
+        border-top: 0.125rem solid $white-color;
+    }
+
+    &__link {
+        font-size: 0.75rem;
+        font-weight: 400;
+
+        a {
+            color: $white-color;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+        }
+
+    }
+
+}
+
+.company {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+
+    >img {
+        width: 4.5rem;
+        height: auto;
+    }
+
+    >p {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-top: $margin * 0.75;
+
+        >span {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+    }
+
+}
+
+.social {
+
+    &__links {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+
+        a {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.25rem;
+            margin-right: $margin * 0.5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $white-color;
+            transition: background-color 120ms ease-in-out;
+
+            i {
+                font-size: 1.5rem;
+            }
+
+            &:hover {
+                background-color: $white-color;
+            }
+
+        }
+
+    }
+
+    &__facebook {
+
+        &:hover {
+            color: #3b5998;
+        }
+
+    }
+
+    &__instagram {
+
+        &:hover {
+
+            >i {
+                background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+        }
+
+    }
+
+}
+
+.contact {
+
+    p {
+        margin-top: $margin * 0.75;
+        color: $white-color;
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+}
+
+
+@media (min-width: 64rem) {
+
+    .content-container {
+        max-width: 90rem;
+        margin: 0 auto;
+        padding-left: $padding * 2;
+        padding-right: $padding * 2;
+    }
+
+    .header {
+
+        &__wrapper {
+            padding-top: unset;
+            padding-bottom: unset;
+        }
+
+    }
+
+    .btn {
+
+        &__menu,
+        &__nav-close {
+            display: none;
+        }
+
+    }
+
+    .nav {
+
+        &__list {
+            position: unset;
+            padding-top: unset;
+            padding-bottom: unset;
+            background-color: transparent;
+        }
+
+        &__links {
+            width: unset;
+            padding-top: unset;
+            padding-bottom: unset;
+            display: grid;
+            grid-auto-flow: column;
+            align-items: center;
+            height: unset;
+        }
+
+        &__item {
+
+            a {
+                padding: $padding * 0.75;
+                color: $black-color;
+
+                &:hover {
+                    background-color: unset;
+                    color: $primary-color;
+                }
+
+            }
+
+        }
+
+    }
+
+    .carousel {
+        height: 36rem;
+
+        &__button-group {
+            padding-left: $padding * 3;
+            padding-right: $padding * 3;
+        }
+
+        &__nav {
+            margin-bottom: $margin * 2;
+        }
+
+    }
+
+    .footer {
+
+        &__wrapper {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-column-gap: 3rem;
+        }
+
+        &__links {
+            text-align: center;
+        }
+
+    }
+
+}
