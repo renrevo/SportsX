@@ -290,6 +290,7 @@ li {
         font-weight: 500;
         color: lighten($black-color, 12);
         margin-top: $margin * 0.75;
+        line-height: 1.68;
     }
 
 }
@@ -385,7 +386,7 @@ li {
     &__section-heading {
         font-size: 1rem;
         font-weight: 600;
-        margin-bottom: $margin * 1.5;
+        margin-bottom: $margin;
     }
 
     &__bottom {
@@ -497,7 +498,7 @@ li {
 .contact {
 
     p {
-        margin-top: $margin * 0.75;
+        margin-top: $margin * 0.5;
         color: $white-color;
         font-size: 0.875rem;
         font-weight: 500;
